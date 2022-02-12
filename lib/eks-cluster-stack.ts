@@ -22,7 +22,7 @@ export class EksClusterStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props: EksClusterStackProps) {
     super(scope, id, props);
 
-    const vpc = new ec2.Vpc(this, "Vpc", { maxAzs: 3 });
+    const vpc = new ec2.Vpc(this, "Vpc", { maxAzs: 2 });
 
     const cluster = new eks.Cluster(this, `acme-${props.nameSuffix}`, {
       clusterName: `acme-${props.nameSuffix}`,
